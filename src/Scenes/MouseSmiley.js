@@ -8,21 +8,17 @@ class MouseSmiley extends Phaser.Scene {
     create() {
         // update instruction text
         document.getElementById('description').innerHTML = '<h2>mouseSmiley.js</h2>';
+        
 
         this.input.on('pointerdown', (pointer) => {
+            //mouse
             let x = pointer.x;
             let y = pointer.y;
 
-            // Create a group of sprites at the mouse click location
+            //create
             let body = this.add.sprite(x, y, "yellowBody");
             let smile = this.add.sprite(x, y + 20, "smile");
-
-            // Store them if needed later (like for updates)
-            this.my.sprite.push({ body: body, smile: smile });
         });
     }
 
-    update() {
-        // For now, no dynamic updates needed
-    }
 }

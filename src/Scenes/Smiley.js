@@ -59,7 +59,7 @@ class Smiley extends Phaser.Scene {
         // at a time, make the "dimple" smile not visible to start.
         my.sprite.dimple.visible = false;
         
-        //set M
+        //set M & scene tran
         this.input.keyboard.on('keydown-M', () => {
             this.scene.start("mouseSmiley");
         });
