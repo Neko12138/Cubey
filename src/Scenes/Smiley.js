@@ -58,9 +58,11 @@ class Smiley extends Phaser.Scene {
         // Since sprites are visible when created and we only want one smile to be shown
         // at a time, make the "dimple" smile not visible to start.
         my.sprite.dimple.visible = false;
-
-        this.mKey = this.input.keyboard.addKey('M');
-
+        
+        //set M
+        this.input.keyboard.on('keydown-M', () => {
+            this.scene.start("mouseSmiley");
+        });
     }
 
     update() {
@@ -88,11 +90,6 @@ class Smiley extends Phaser.Scene {
                     console.log("Error: unknown smile");
             }
         }
-
-        if (Phaser.Input.Keyboard.JustDown(this.mKey)) {
-            this.scene.start("mouseSmiley");
-        }
-        
     }
 
 }
